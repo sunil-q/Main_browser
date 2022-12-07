@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:id="@+id/lytMainBholu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/coloroffwhite"
+        android:orientation="vertical"
+        tools:context=".fastweb.secureweblite.browser_bholu.BholuWebActivity">
+
+        <RelativeLayout
+            android:id="@+id/lytSearchBholu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/bg_searchmain_bholu"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+            <EditText
+                android:id="@+id/etSearchBholu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/googleMicBholu"
+                android:background="@android:color/transparent"
+                android:hint="Enter URL..."
+                android:imeOptions="actionSearch"
+                android:inputType="text"
+                android:paddingHorizontal="5dp"
+                android:paddingVertical="3dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:id="@+id/googleMicBholu"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_gravity="end"
+                android:padding="5dp"
+                android:src="@drawable/googlemic_bholu" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/loadContainerBholu">
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/viewpager2Bholu"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal" />
+
+            <FrameLayout
+                android:id="@+id/framelytBholu"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
+        <include
+            android:id="@+id/loadContainerBholu"
+            layout="@layout/banner_ad_common_kaka"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true" />
+
+    </RelativeLayout>
+</layout>

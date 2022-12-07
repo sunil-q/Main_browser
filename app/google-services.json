@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "322117412375",
+    "project_id": "fast-5g-browser-cafef",
+    "storage_bucket": "fast-5g-browser-cafef.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:322117412375:android:abe80a3e4338e11c7cde52",
+        "android_client_info": {
+          "package_name": "com.fastspeed.five5gbrowser"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "322117412375-tf9al1o2iu85gecgorjr738eevi9omr5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBG9YGq5kUhxV7aaou-Zyd7GNWCRO0yIlo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "322117412375-tf9al1o2iu85gecgorjr738eevi9omr5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

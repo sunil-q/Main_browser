@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".fastweb.secureweblite.browser_bholu.BholuBrowserFragment">
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipeBholu"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/lytBottomBholu">
+
+            <WebView
+                android:id="@+id/webviewBholu"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp" />
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        <me.zhanghai.android.materialprogressbar.MaterialProgressBar
+            android:id="@+id/progressbarBholu"
+            style="@style/Widget.MaterialProgressBar.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:indeterminate="true"
+            app:mpb_progressStyle="horizontal" />
+
+        <LinearLayout
+            android:id="@+id/lytBottomBholu"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="bottom"
+            android:orientation="horizontal"
+            android:weightSum="5">
+
+            <ImageView
+                android:id="@+id/imgbackBholu"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:padding="13dp"
+                android:src="@drawable/previous_bholu"
+                app:tint="@color/primary" />
+
+            <ImageView
+                android:id="@+id/imgforwardBholu"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:padding="13dp"
+                android:rotation="180"
+                android:src="@drawable/previous_bholu"
+                app:tint="@color/primary" />
+
+            <ImageView
+                android:id="@+id/imghomeBholu"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:padding="13dp"
+                android:src="@drawable/home_bholu"
+                app:tint="@color/primary" />
+
+            <ImageView
+                android:id="@+id/imgtabsBholu"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:padding="13dp"
+                android:src="@drawable/tab_bholu"
+                app:tint="@color/primary" />
+
+            <ImageView
+                android:id="@+id/imgmenuBholu"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:padding="13dp"
+                android:src="@drawable/menu_bholu"
+                app:tint="@color/primary" />
+        </LinearLayout>
+    </RelativeLayout>
+</layout>

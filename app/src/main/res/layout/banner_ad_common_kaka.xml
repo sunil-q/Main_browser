@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/mainBannerkaka"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/adLAyoutkaka"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp">
+
+            <TextView
+                android:id="@+id/text_adkaka"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:layout_centerInParent="true"
+                android:background="@color/payout_bg"
+                android:fontFamily="@font/poppins_regular"
+                android:gravity="center"
+                android:text="@string/advertizment"
+                android:textSize="15sp" />
+
+            <LinearLayout
+                android:id="@+id/adViewkaka"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+</layout>

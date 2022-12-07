@@ -1,0 +1,147 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-android-extensions'
+    id 'dagger.hilt.android.plugin'
+    id 'kotlin-kapt'
+    id 'org.jetbrains.kotlin.android'
+    id 'com.google.firebase.crashlytics'
+    id 'com.onesignal.androidsdk.onesignal-gradle-plugin'
+    id 'com.google.gms.google-services'
+}
+
+android {
+    compileSdkVersion 31
+
+    defaultConfig {
+        applicationId "com.fastspeed.five5gbrowser"
+        minSdkVersion 23
+        targetSdkVersion 31
+        versionCode 1
+        versionName "1.0.1"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+        externalNativeBuild {
+            cmake {
+                cppFlags ''
+            }
+        }
+        Date date = new Date()
+        String d = date.format('_ddMMYYYY')
+        setProperty("archivesBaseName", "Fast5GBrowser_v$versionCode$d")
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            minifyEnabled false
+        }
+    }
+    dataBinding {
+        enabled true
+    }
+    externalNativeBuild {
+        cmake {
+            path file('src/main/cpp/CMakeLists.txt')
+            version '3.10.2'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    ndkVersion '23.1.7779620'
+    lintOptions {
+        abortOnError false
+        checkAllWarnings false
+        checkReleaseBuilds false
+        ignoreWarnings true
+        quiet true
+    }
+    dexOptions {
+        javaMaxHeapSize "4g"
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    implementation 'com.google.android.material:material:1.2.1'
+
+    implementation 'androidx.multidex:multidex:2.0.1'
+
+    //noinspection GradleCompatible
+    implementation 'me.zhanghai.android.materialprogressbar:library:1.1.4'
+
+    implementation 'androidx.webkit:webkit:1.2.0'
+
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
+
+    implementation 'com.google.code.gson:gson:2.8.9'
+
+    implementation 'com.squareup.retrofit2:converter-gson:2.1.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.4.1'
+
+    implementation 'com.mindorks.android:prdownloader:0.6.0'
+
+    implementation 'com.karumi:dexter:6.2.3'
+
+    implementation 'com.intuit.ssp:ssp-android:1.0.6'
+    implementation 'com.intuit.sdp:sdp-android:1.0.6'
+
+    implementation 'com.google.android.gms:play-services-ads:21.3.0'
+    implementation "com.google.dagger:dagger:2.38.1"
+    kapt "com.google.dagger:dagger-compiler:2.38.1"
+    implementation 'com.google.dagger:hilt-android:2.38.1'
+    //don't upgrade unless same version of kapt availale
+    kapt 'com.google.dagger:hilt-android-compiler:2.38.1'
+    implementation 'androidx.hilt:hilt-work:1.0.0'
+    implementation "androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha03"
+    kapt "androidx.hilt:hilt-compiler:1.0.0"
+
+    implementation 'com.orhanobut:logger:2.2.0'
+    implementation 'com.scottyab:rootbeer-lib:0.0.8'
+    implementation 'com.github.razir.progressbutton:progressbutton:2.1.0'
+    def room_version = "2.3.0"
+    implementation 'androidx.room:room-runtime:2.3.0'
+    kapt 'androidx.room:room-compiler:2.3.0'
+//    implementation "androidx.room:room-ktx:2.3.0"
+    implementation 'net.zetetic:android-database-sqlcipher:4.4.0@aar'
+
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.9.0'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+    implementation 'com.squareup.retrofit2:converter-scalars:2.9.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.9.1'
+
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.3.0'
+    implementation 'androidx.fragment:fragment-ktx:1.3.6'
+
+    //keep only
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2'
+    implementation 'androidx.core:core-ktx:1.6.0'
+    implementation 'com.karumi:dexter:6.2.1'
+
+    implementation 'androidx.security:security-crypto:1.1.0-alpha03'
+    implementation 'androidx.work:work-runtime-ktx:2.7.1'
+
+    implementation 'com.google.firebase:firebase-analytics-ktx:21.2.0'
+    implementation 'com.google.firebase:firebase-crashlytics-ktx:18.3.1'
+    implementation 'com.onesignal:OneSignal:[4.0.0, 4.99.99]'
+
+}
